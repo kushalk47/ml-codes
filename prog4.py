@@ -4,6 +4,7 @@ def find_s_compact(file_path):
     data = pd.read_csv(file_path)
     attributes = data.columns[:-1]
     class_label = data.columns[-1]
+    print(data)
 
     # Initialize hypothesis with the first positive example's attributes if available, else all '?'
     # This is a common Find-S initialization strategy for the "most specific" hypothesis.
@@ -20,18 +21,7 @@ def find_s_compact(file_path):
                 hypothesis[i] = '?'
     return hypothesis
 
-# --- How to use it ---
-# Make sure your 'training.csv' file is in the specified path.
-# Example CSV content (as per your prompt):
-# Outlook,Temperature,Humidity,Windy,PlayTennis
-# Sunny,Hot,High,False,No
-# Sunny,Hot,High,True,No
-# Overcast,Hot,High,False,Yes
-# Rain,Cold,High,False,Yes
-# Rain,Cool,Normal,False,No
-# Overcast,Cold,Normal,True,Yes
-# Sunny,Cool,Normal,True,No
-# Rain,Hot,High,False,Yes
+
 
 file_path = 'training.csv'
 final_hypothesis = find_s_compact(file_path)

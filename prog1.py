@@ -25,7 +25,7 @@ for i, feature in enumerate(numerical_features):
 
 plt.tight_layout()
 plt.show()
-
+    
 # Step 3: Generate box plots for numerical features
 plt.figure(figsize=(15, 5 * n_rows))
 for i, feature in enumerate(numerical_features):
@@ -50,7 +50,6 @@ for feature in numerical_features:
 
     outliers = housing_df[(housing_df[feature] < lower_bound) | (housing_df[feature] > upper_bound)]
     outliers_summary[feature] = len(outliers)
-
     print(f"{feature}: {len(outliers)} outliers")
 
 # Optional: Print a summary of the dataset
